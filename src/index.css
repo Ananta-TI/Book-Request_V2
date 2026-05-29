@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
   html {
@@ -18,47 +16,148 @@
   svg {
     max-width: 100%;
   }
+
+  input,
+  select,
+  textarea,
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @layer components {
   .input-bmw {
-    @apply w-full h-12 border border-[#cccccc] bg-white px-4 text-[14px] text-[#262626] outline-none transition;
+    width: 100%;
+    height: 48px;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 14px;
+    color: #262626;
+    outline: none;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
   }
 
   .input-bmw:focus {
-    @apply border-[#1c69d4] ring-1 ring-[#1c69d4];
+    border-color: #1c69d4;
+    box-shadow: 0 0 0 1px #1c69d4;
   }
 
   .btn-primary-bmw {
-    @apply inline-flex h-12 items-center justify-center px-6 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition;
+    display: inline-flex;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    background: #1c69d4;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background-color 150ms ease;
+  }
+
+  .btn-primary-bmw:hover {
+    background: #0653b6;
   }
 
   .btn-secondary-bmw {
-    @apply inline-flex h-12 items-center justify-center px-6 border border-[#cccccc] text-[#262626] text-[14px] font-bold tracking-[0.5px] hover:border-[#262626] transition;
+    display: inline-flex;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    border: 1px solid #cccccc;
+    color: #262626;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: border-color 150ms ease, background-color 150ms ease;
+  }
+
+  .btn-secondary-bmw:hover {
+    border-color: #262626;
   }
 
   .table-head-bmw {
-    @apply px-4 sm:px-5 py-4 text-[12px] font-bold whitespace-nowrap;
+    padding: 16px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
   }
 
   .table-cell-bmw {
-    @apply px-4 sm:px-5 py-4 align-top text-[14px];
+    padding: 16px 20px;
+    vertical-align: top;
+    font-size: 14px;
   }
 
   .page-padding-bmw {
-    @apply px-4 sm:px-6 lg:px-10;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .hero-title-bmw {
-    @apply text-[34px] sm:text-[42px] md:text-[56px] lg:text-[64px] leading-[1.05] font-bold;
+    font-size: 34px;
+    line-height: 1.05;
+    font-weight: 700;
   }
 
   .section-title-bmw {
-    @apply text-[30px] sm:text-[36px] md:text-[48px] leading-[1.1] font-bold;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 700;
   }
 
   .text-body-bmw {
-    @apply text-[15px] sm:text-[16px] leading-[1.6] font-light;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+}
+
+@media (min-width: 640px) {
+  .page-padding-bmw {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hero-title-bmw {
+    font-size: 42px;
+  }
+
+  .section-title-bmw {
+    font-size: 36px;
+  }
+
+  .text-body-bmw {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title-bmw {
+    font-size: 56px;
+  }
+
+  .section-title-bmw {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-padding-bmw {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .hero-title-bmw {
+    font-size: 64px;
   }
 }
 
@@ -75,11 +174,10 @@
     font-size: 13px;
   }
 
-  input,
-  select,
-  textarea,
-  button,
-  a {
-    -webkit-tap-highlight-color: transparent;
+  .btn-primary-bmw,
+  .btn-secondary-bmw {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
