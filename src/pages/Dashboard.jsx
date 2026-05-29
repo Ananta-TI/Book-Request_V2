@@ -98,12 +98,12 @@ function Dashboard() {
 
       <main className="min-h-screen bg-white text-[#262626]">
         <section className="bg-[#1a2129] text-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-16 lg:py-20 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-end">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-16 lg:py-20 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-end">
             <div>
               <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#bbbbbb] mb-5">
                 Dashboard
               </p>
-              <h1 className="text-[42px] md:text-[56px] lg:text-[64px] leading-[1.05] font-bold">
+              <h1 className="text-[34px] sm:text-[42px] md:text-[56px] lg:text-[64px] leading-[1.05] font-bold">
                 Selamat datang, {user?.name || "User"}
               </h1>
               <p className="mt-5 text-[16px] leading-[1.55] text-[#bbbbbb] font-light">
@@ -122,7 +122,7 @@ function Dashboard() {
           </div>
         </section>
 
-        <section className="max-w-[1440px] mx-auto px-6 lg:px-10 py-12">
+        <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 border border-[#e6e6e6]">
             {statItems.map(([key, label], index) => (
               <div
@@ -142,12 +142,12 @@ function Dashboard() {
           </div>
         </section>
 
-        <section className="max-w-[1440px] mx-auto px-6 lg:px-10 pb-20">
+        <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pb-20">
           <div className="mb-10">
             <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#6b6b6b] mb-4">
               Akses Cepat
             </p>
-            <h2 className="text-[36px] md:text-[48px] leading-[1.1] font-bold">
+            <h2 className="text-[30px] sm:text-[36px] md:text-[48px] leading-[1.1] font-bold">
               Pilih pekerjaan yang ingin dilakukan.
             </h2>
           </div>

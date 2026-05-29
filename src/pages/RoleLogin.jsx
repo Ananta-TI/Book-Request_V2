@@ -54,7 +54,7 @@ function RoleLogin() {
 
   return (
     <main className="min-h-screen bg-white text-[#262626] grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr]">
-      <section className="bg-[#1a2129] text-white px-6 lg:px-12 py-10 lg:py-16 flex flex-col justify-between">
+      <section className="bg-[#1a2129] text-white px-4 sm:px-6 lg:px-12 py-10 lg:py-16 flex flex-col justify-between">
         <div>
           <Link to="/login" className="inline-flex text-[13px] font-bold tracking-[1.5px] uppercase text-[#bbbbbb] hover:text-white mb-16">
             Kembali ke login
@@ -62,7 +62,7 @@ function RoleLogin() {
           <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#bbbbbb] mb-5">
             Login {config.label}
           </p>
-          <h1 className="text-[42px] md:text-[56px] leading-[1.05] font-bold max-w-xl">
+          <h1 className="text-[34px] sm:text-[42px] md:text-[56px] leading-[1.05] font-bold max-w-xl">
             {config.label}
           </h1>
           <p className="mt-6 text-[16px] leading-[1.55] text-[#bbbbbb] font-light max-w-xl">
@@ -71,7 +71,7 @@ function RoleLogin() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-10 lg:py-16 flex items-center">
+      <section className="px-4 sm:px-6 lg:px-12 py-10 lg:py-16 flex items-center">
         <div className="w-full max-w-xl mx-auto border border-[#e6e6e6] bg-white">
           <div className="p-6 lg:p-8 border-b border-[#e6e6e6]">
             <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#6b6b6b] mb-4">Book Requests</p>

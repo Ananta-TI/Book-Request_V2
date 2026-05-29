@@ -87,7 +87,7 @@ function Landing() {
   return (
     <main className="min-h-screen bg-white text-[#262626] font-sans">
       <header className="sticky top-0 z-50 bg-white border-b border-[#e6e6e6]">
-        <nav className="max-w-[1440px] mx-auto h-16 px-6 lg:px-10 flex items-center justify-between">
+        <nav className="max-w-[1440px] mx-auto h-16 px-4 sm:px-6 lg:px-10 flex items-center justify-between">
           <Link to="/" className="inline-flex items-center">
             <img
               src="/image/LogoUtama.png"
@@ -183,13 +183,13 @@ function Landing() {
       </header>
 
       <section id="home" className="bg-[#1a2129] text-white">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#bbbbbb] mb-6">
               Sistem Request Buku & Modul
             </p>
 
-            <h2 className="text-[42px] md:text-[56px] lg:text-[64px] leading-[1.05] font-bold max-w-3xl">
+            <h2 className="text-[34px] sm:text-[42px] md:text-[56px] lg:text-[64px] leading-[1.05] font-bold max-w-3xl">
               Selamat Datang Di PCR Request
             </h2>
 
@@ -296,14 +296,14 @@ function Landing() {
       </section>
 
       <section id="tentang" className="bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#6b6b6b] mb-5">
                 Tentang Sistem
               </p>
 
-              <h3 className="text-[36px] md:text-[48px] leading-[1.1] font-bold text-[#262626]">
+              <h3 className="text-[30px] sm:text-[36px] md:text-[48px] leading-[1.1] font-bold text-[#262626]">
                 Sistem request akademik yang lebih jelas dan terdokumentasi.
               </h3>
             </div>
@@ -344,13 +344,13 @@ function Landing() {
       </section>
 
       <section id="alur" className="bg-[#f7f7f7] border-y border-[#e6e6e6]">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-20">
           <div className="mb-12">
             <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#6b6b6b] mb-5">
               Alur Sistem
             </p>
 
-            <h3 className="text-[36px] md:text-[48px] leading-[1.1] font-bold text-[#262626]">
+            <h3 className="text-[30px] sm:text-[36px] md:text-[48px] leading-[1.1] font-bold text-[#262626]">
               Bagaimana PCR Request bekerja.
             </h3>
           </div>
@@ -383,14 +383,14 @@ function Landing() {
       </section>
 
       <section id="layanan" className="bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-12">
             <div>
               <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#6b6b6b] mb-5">
                 Layanan Kami
               </p>
 
-              <h3 className="text-[36px] md:text-[48px] leading-[1.1] font-bold">
+              <h3 className="text-[30px] sm:text-[36px] md:text-[48px] leading-[1.1] font-bold">
                 Layanan pendukung perpustakaan dan informasi kampus.
               </h3>
             </div>
@@ -435,14 +435,14 @@ function Landing() {
       </section>
 
       <section id="koleksi" className="bg-[#f7f7f7] border-y border-[#e6e6e6]">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-20">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
               <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#6b6b6b] mb-5">
                 Referensi Akademik
               </p>
 
-              <h3 className="text-[36px] md:text-[48px] leading-[1.1] font-bold">
+              <h3 className="text-[30px] sm:text-[36px] md:text-[48px] leading-[1.1] font-bold">
                 Koleksi Buku Kami
               </h3>
             </div>
@@ -498,13 +498,13 @@ function Landing() {
       </section>
 
       <section className="bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-20">
           <div className="mb-12">
             <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#6b6b6b] mb-5">
               Pengguna Sistem
             </p>
 
-            <h3 className="text-[36px] md:text-[48px] leading-[1.1] font-bold">
+            <h3 className="text-[30px] sm:text-[36px] md:text-[48px] leading-[1.1] font-bold">
               Tiga role utama dalam PCR Request.
             </h3>
           </div>
@@ -535,14 +535,14 @@ function Landing() {
       </section>
 
       <section className="bg-[#1a2129] text-white">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-end">
             <div>
               <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#bbbbbb] mb-5">
                 Mulai Sekarang
               </p>
 
-              <h3 className="text-[36px] md:text-[48px] leading-[1.1] font-bold max-w-3xl">
+              <h3 className="text-[30px] sm:text-[36px] md:text-[48px] leading-[1.1] font-bold max-w-3xl">
                 Permudah pengajuan buku dan modul dengan sistem yang lebih
                 modern.
               </h3>
@@ -593,7 +593,7 @@ function Landing() {
       </section>
 
       <footer className="bg-[#f7f7f7] text-[#3c3c3c]">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
             <h4 className="text-[16px] font-bold mb-4">Book Requests</h4>
             <p className="text-[14px] leading-[1.55] font-light text-[#6b6b6b]">
@@ -671,7 +671,7 @@ function Landing() {
         </div>
 
         <div className="border-t border-[#e6e6e6]">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-6 text-[14px] text-[#6b6b6b] font-light">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-6 text-[14px] text-[#6b6b6b] font-light">
             © Book Requests - Library Request System
           </div>
         </div>

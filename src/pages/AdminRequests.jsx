@@ -61,12 +61,12 @@ function AdminRequests() {
       <Navbar />
       <main className="min-h-screen bg-white text-[#262626]">
         <section className="bg-[#1a2129] text-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
               <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#bbbbbb] mb-5">
                 Admin Request
               </p>
-              <h1 className="text-[42px] md:text-[56px] leading-[1.05] font-bold">
+              <h1 className="text-[34px] sm:text-[42px] md:text-[56px] leading-[1.05] font-bold">
                 Kelola Request Buku & Modul
               </h1>
               <p className="mt-5 text-[16px] leading-[1.55] text-[#bbbbbb] font-light max-w-2xl">
@@ -80,7 +80,7 @@ function AdminRequests() {
           </div>
         </section>
 
-        <section className="max-w-[1440px] mx-auto px-6 lg:px-10 py-12">
+        <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12">
           <div className="border border-[#e6e6e6] bg-white overflow-x-auto">
             {loading ? (
               <div className="p-8 text-[#6b6b6b] font-light">Memuat data...</div>
@@ -89,7 +89,7 @@ function AdminRequests() {
                 Belum ada data request. Minimal belum ada tabel yang terbakar, itu kemajuan kecil.
               </div>
             ) : (
-              <table className="w-full text-[14px]">
+              <table className="min-w-[1100px] w-full text-[14px]">
                 <thead className="bg-[#f7f7f7] border-b border-[#e6e6e6]">
                   <tr className="text-left text-[#6b6b6b] uppercase tracking-[0.5px]">
                     <th className="table-head-bmw">Pengaju</th>

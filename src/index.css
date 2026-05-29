@@ -1,46 +1,85 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  box-sizing: border-box;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  body {
+    overflow-x: hidden;
+    background: #ffffff;
+  }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #ffffff;
-  color: #262626;
-}
-
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
 }
 
 @layer components {
   .input-bmw {
-    @apply w-full h-12 border border-[#cccccc] bg-white px-4 text-[16px] font-light text-[#262626] outline-none focus:border-[#262626] disabled:cursor-not-allowed;
+    @apply w-full h-12 border border-[#cccccc] bg-white px-4 text-[14px] text-[#262626] outline-none transition;
+  }
+
+  .input-bmw:focus {
+    @apply border-[#1c69d4] ring-1 ring-[#1c69d4];
   }
 
   .btn-primary-bmw {
-    @apply inline-flex h-12 items-center justify-center px-8 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition;
+    @apply inline-flex h-12 items-center justify-center px-6 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition;
   }
 
   .btn-secondary-bmw {
-    @apply inline-flex h-12 items-center justify-center px-8 bg-white border border-[#cccccc] text-[#262626] text-[14px] font-bold tracking-[0.5px] hover:border-[#262626] transition;
+    @apply inline-flex h-12 items-center justify-center px-6 border border-[#cccccc] text-[#262626] text-[14px] font-bold tracking-[0.5px] hover:border-[#262626] transition;
   }
 
   .table-head-bmw {
-    @apply px-5 py-4 text-left text-[12px] font-bold tracking-[0.5px];
+    @apply px-4 sm:px-5 py-4 text-[12px] font-bold whitespace-nowrap;
   }
 
   .table-cell-bmw {
-    @apply px-5 py-4 align-top text-[#262626];
+    @apply px-4 sm:px-5 py-4 align-top text-[14px];
+  }
+
+  .page-padding-bmw {
+    @apply px-4 sm:px-6 lg:px-10;
+  }
+
+  .hero-title-bmw {
+    @apply text-[34px] sm:text-[42px] md:text-[56px] lg:text-[64px] leading-[1.05] font-bold;
+  }
+
+  .section-title-bmw {
+    @apply text-[30px] sm:text-[36px] md:text-[48px] leading-[1.1] font-bold;
+  }
+
+  .text-body-bmw {
+    @apply text-[15px] sm:text-[16px] leading-[1.6] font-light;
+  }
+}
+
+@media (max-width: 640px) {
+  .table-head-bmw {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 11px;
+  }
+
+  .table-cell-bmw {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 13px;
+  }
+
+  input,
+  select,
+  textarea,
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
   }
 }

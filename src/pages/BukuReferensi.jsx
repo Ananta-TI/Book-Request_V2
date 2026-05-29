@@ -59,12 +59,12 @@ function BukuReferensi() {
       <Navbar />
       <main className="min-h-screen bg-white text-[#262626]">
         <section className="bg-[#1a2129] text-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
               <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#bbbbbb] mb-5">
                 Buku Referensi
               </p>
-              <h1 className="text-[42px] md:text-[56px] leading-[1.05] font-bold">
+              <h1 className="text-[34px] sm:text-[42px] md:text-[56px] leading-[1.05] font-bold">
                 Daftar Buku Referensi
               </h1>
               <p className="mt-5 text-[16px] leading-[1.55] text-[#bbbbbb] font-light max-w-2xl">
@@ -80,7 +80,7 @@ function BukuReferensi() {
           </div>
         </section>
 
-        <section className="max-w-[1440px] mx-auto px-6 lg:px-10 py-12">
+        <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12">
           <div className="border border-[#e6e6e6] bg-white p-4 mb-8">
             <input
               type="text"
@@ -98,13 +98,13 @@ function BukuReferensi() {
               Belum ada buku referensi. Rak digitalnya masih kosong, tragis tapi mudah diperbaiki.
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-[#e6e6e6] bg-white">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border border-[#e6e6e6] bg-white">
               {filteredBooks.map((book, index) => (
                 <article
                   key={book.id}
-                  className={`bg-white ${index !== 0 ? "lg:border-l border-[#e6e6e6]" : ""} ${index < filteredBooks.length - 1 ? "border-b lg:border-b-0 border-[#e6e6e6]" : ""}`}
+                  className={`bg-white ${index % 4 !== 0 ? "xl:border-l border-[#e6e6e6]" : ""} ${index < filteredBooks.length - 1 ? "border-b lg:border-b-0 border-[#e6e6e6]" : ""}`}
                 >
-                  <div className="h-80 bg-[#fafafa] border-b border-[#e6e6e6] overflow-hidden">
+                  <div className="h-64 sm:h-72 lg:h-80 bg-[#fafafa] border-b border-[#e6e6e6] overflow-hidden">
                     {book.image_url ? (
                       <img
                         src={book.image_url}

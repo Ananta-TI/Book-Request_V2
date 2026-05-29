@@ -154,11 +154,11 @@ function EditBook() {
       <Navbar />
       <main className="min-h-screen bg-white text-[#262626]">
         <section className="bg-[#1a2129] text-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-16">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-16">
             <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#bbbbbb] mb-5">
               Buku Referensi
             </p>
-            <h1 className="text-[42px] md:text-[56px] leading-[1.05] font-bold">
+            <h1 className="text-[34px] sm:text-[42px] md:text-[56px] leading-[1.05] font-bold">
               Edit Buku Referensi
             </h1>
             <p className="mt-5 text-[16px] leading-[1.55] text-[#bbbbbb] font-light max-w-2xl">
@@ -167,7 +167,7 @@ function EditBook() {
           </div>
         </section>
 
-        <section className="max-w-[980px] mx-auto px-6 lg:px-10 py-12">
+        <section className="max-w-[980px] mx-auto px-4 sm:px-6 lg:px-10 py-12">
           <div className="border border-[#e6e6e6] bg-white">
             {loading ? (
               <div className="p-8 text-[#6b6b6b] font-light">Memuat data buku...</div>
