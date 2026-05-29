@@ -26,20 +26,13 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-[#e6e6e6]">
       <nav className="max-w-[1440px] mx-auto h-16 px-6 lg:px-10 flex items-center justify-between gap-6">
-        <Link to="/dashboard" className="flex items-center gap-3 shrink-0">
-          <div className="w-10 h-10 bg-[#1c69d4] text-white flex items-center justify-center font-bold text-sm">
-            BR
-          </div>
-
-          <div>
-            <h1 className="text-[16px] leading-none font-bold text-[#262626]">
-              Book Requests
-            </h1>
-            <p className="text-[12px] text-[#6b6b6b] mt-1">
-              Library Request System
-            </p>
-          </div>
-        </Link>
+        <Link to="/" className="inline-flex items-center">
+            <img
+              src="/image/LogoUtama.png"
+              alt="Logo Book Requests"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
 
         <div className="hidden xl:flex items-center gap-7 text-[14px] font-normal">
           <Link to="/dashboard" className={`h-16 flex items-center transition ${navClass("/dashboard")}`}>

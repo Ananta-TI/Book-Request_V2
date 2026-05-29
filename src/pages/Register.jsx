@@ -58,13 +58,14 @@ function Register() {
     <main className="min-h-screen bg-white text-[#262626] grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr]">
       <section className="bg-[#1a2129] text-white px-6 lg:px-12 py-10 lg:py-16 flex flex-col justify-between">
         <div>
-          <Link to="/" className="inline-flex items-center gap-3 mb-16">
-            <div className="w-10 h-10 bg-[#1c69d4] text-white flex items-center justify-center font-bold text-sm">BR</div>
-            <div>
-              <h1 className="text-[16px] font-bold leading-none">Book Requests</h1>
-              <p className="text-[12px] text-[#bbbbbb] mt-1">Library Request System</p>
-            </div>
-          </Link>
+          <Link to="/" className="inline-flex  gap-1 ">
+  <img
+    src="/image/LogoUtama.png"
+    alt="Logo Book Requests"
+    className="h-14 w-auto "
+  />
+
+</Link>
 
           <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#bbbbbb] mb-5">
             Registrasi Pengguna
@@ -75,6 +76,13 @@ function Register() {
           <p className="mt-6 text-[16px] leading-[1.55] text-[#bbbbbb] font-light max-w-xl">
             Staff perpustakaan tidak tersedia di form register dan dibuat manual oleh admin. Supaya sistem tidak berubah jadi festival role palsu, sebagaimana manusia gemar mencoba.
           </p>
+          <br />
+  <Link
+    to="/"
+    className="inline-flex h-12 items-center px-6 border border-white/40 text-white text-[13px] font-bold tracking-[1.5px] uppercase hover:bg-white hover:text-[#1a2129] transition"
+  >
+    ← Kembali ke Home
+  </Link>
         </div>
 
         <p className="text-[13px] text-[#bbbbbb] font-light mt-12">

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const services = [
   {
@@ -74,63 +74,110 @@ const books = [
 ];
 
 function Landing() {
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem("book_request_user") || "null");
+  const isLoggedIn = Boolean(user);
+
+  const handleLogout = () => {
+    localStorage.removeItem("book_request_user");
+    navigate("/login");
+  };
+
   return (
     <main className="min-h-screen bg-white text-[#262626] font-sans">
       <header className="sticky top-0 z-50 bg-white border-b border-[#e6e6e6]">
         <nav className="max-w-[1440px] mx-auto h-16 px-6 lg:px-10 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#1c69d4] text-white flex items-center justify-center font-bold text-sm">
-              BR
-            </div>
-
-            <div>
-              <h1 className="text-[16px] leading-none font-bold text-[#262626]">
-                Book Requests
-              </h1>
-              <p className="text-[12px] text-[#6b6b6b] mt-1">
-                Library Request System
-              </p>
-            </div>
+          <Link to="/" className="inline-flex items-center">
+            <img
+              src="/image/LogoUtama.png"
+              alt="Logo Book Requests"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-8 text-[14px] text-[#262626]">
             <a href="#home" className="hover:text-[#1c69d4] transition">
               Home
             </a>
+
             <a href="#tentang" className="hover:text-[#1c69d4] transition">
               Tentang
             </a>
+
             <a href="#alur" className="hover:text-[#1c69d4] transition">
               Alur
             </a>
+
             <a href="#layanan" className="hover:text-[#1c69d4] transition">
               Layanan
             </a>
+
             <a href="#koleksi" className="hover:text-[#1c69d4] transition">
               Koleksi
             </a>
+
             <Link
               to="/buku-referensi"
               className="hover:text-[#1c69d4] transition"
             >
               Buku Referensi
             </Link>
+
+            {isLoggedIn && (
+              <Link
+                to="/dashboard"
+                className="hover:text-[#1c69d4] transition"
+              >
+                Dashboard
+              </Link>
+            )}
           </div>
 
           <div className="flex items-center gap-3">
-            <Link
-              to="/login"
-              className="hidden sm:inline-flex h-12 items-center px-8 border border-[#cccccc] text-[14px] font-bold tracking-[0.5px] hover:border-[#262626] transition"
-            >
-              LOGIN
-            </Link>
+            {isLoggedIn ? (
+              <>
+                <div className="hidden md:block text-right">
+                  <p className="text-[14px] font-bold text-[#262626]">
+                    {user?.name || "User"}
+                  </p>
+                  <p className="text-[12px] text-[#6b6b6b] mt-1">
+                    {user?.roleLabel || user?.role}
+                  </p>
+                </div>
 
-            <Link
-              to="/register"
-              className="inline-flex h-12 items-center px-8 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition"
-            >
-              REGISTER
-            </Link>
+                <Link
+                  to="/dashboard"
+                  className="inline-flex h-12 items-center px-6 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition"
+                >
+                  DASHBOARD
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  className="hidden sm:inline-flex h-12 items-center px-6 border border-[#cccccc] text-[#262626] text-[14px] font-bold tracking-[0.5px] hover:border-[#262626] transition"
+                >
+                  LOGOUT
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="hidden sm:inline-flex h-12 items-center px-8 border border-[#cccccc] text-[14px] font-bold tracking-[0.5px] hover:border-[#262626] transition"
+                >
+                  LOGIN
+                </Link>
+
+                <Link
+                  to="/register"
+                  className="inline-flex h-12 items-center px-8 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition"
+                >
+                  REGISTER
+                </Link>
+              </>
+            )}
           </div>
         </nav>
       </header>
@@ -155,19 +202,39 @@ function Landing() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Link
-                to="/register"
-                className="inline-flex h-12 items-center justify-center px-8 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition"
-              >
-                MULAI SEKARANG
-              </Link>
+              {isLoggedIn ? (
+                <>
+                  <Link
+                    to="/dashboard"
+                    className="inline-flex h-12 items-center justify-center px-8 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition"
+                  >
+                    MASUK DASHBOARD
+                  </Link>
 
-              <Link
-                to="/login"
-                className="inline-flex h-12 items-center justify-center px-8 border border-white text-white text-[14px] font-bold tracking-[0.5px] hover:bg-white hover:text-[#1a2129] transition"
-              >
-                LOGIN SISTEM
-              </Link>
+                  <Link
+                    to="/buku-referensi"
+                    className="inline-flex h-12 items-center justify-center px-8 border border-white text-white text-[14px] font-bold tracking-[0.5px] hover:bg-white hover:text-[#1a2129] transition"
+                  >
+                    LIHAT BUKU
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/register"
+                    className="inline-flex h-12 items-center justify-center px-8 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition"
+                  >
+                    MULAI SEKARANG
+                  </Link>
+
+                  <Link
+                    to="/login"
+                    className="inline-flex h-12 items-center justify-center px-8 border border-white text-white text-[14px] font-bold tracking-[0.5px] hover:bg-white hover:text-[#1a2129] transition"
+                  >
+                    LOGIN SISTEM
+                  </Link>
+                </>
+              )}
             </div>
           </div>
 
@@ -262,7 +329,9 @@ function Landing() {
                 key={title}
                 className={`p-6 bg-white ${
                   index !== 0 ? "md:border-l border-[#e6e6e6]" : ""
-                } ${index !== 3 ? "border-b md:border-b-0 border-[#e6e6e6]" : ""}`}
+                } ${
+                  index !== 3 ? "border-b md:border-b-0 border-[#e6e6e6]" : ""
+                }`}
               >
                 <h4 className="text-[20px] font-bold">{title}</h4>
                 <p className="text-[14px] leading-[1.55] text-[#6b6b6b] font-light mt-3">
@@ -292,7 +361,9 @@ function Landing() {
                 key={step.number}
                 className={`p-6 lg:p-8 ${
                   index !== 0 ? "md:border-l border-[#e6e6e6]" : ""
-                } ${index !== 2 ? "border-b md:border-b-0 border-[#e6e6e6]" : ""}`}
+                } ${
+                  index !== 2 ? "border-b md:border-b-0 border-[#e6e6e6]" : ""
+                }`}
               >
                 <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#1c69d4]">
                   Step {step.number}
@@ -330,7 +401,11 @@ function Landing() {
                   key={service.title}
                   className={`p-6 lg:p-8 bg-white ${
                     index !== 0 ? "md:border-l border-[#e6e6e6]" : ""
-                  } ${index !== services.length - 1 ? "border-b md:border-b-0 border-[#e6e6e6]" : ""}`}
+                  } ${
+                    index !== services.length - 1
+                      ? "border-b md:border-b-0 border-[#e6e6e6]"
+                      : ""
+                  }`}
                 >
                   <p className="text-[13px] font-bold tracking-[1.5px] uppercase text-[#1c69d4]">
                     External Link
@@ -386,7 +461,11 @@ function Landing() {
                 key={book.title}
                 className={`bg-white ${
                   index !== 0 ? "md:border-l border-[#e6e6e6]" : ""
-                } ${index < books.length - 1 ? "border-b md:border-b-0 border-[#e6e6e6]" : ""}`}
+                } ${
+                  index < books.length - 1
+                    ? "border-b md:border-b-0 border-[#e6e6e6]"
+                    : ""
+                }`}
               >
                 <div className="bg-[#fafafa] h-72">
                   <img
@@ -436,7 +515,11 @@ function Landing() {
                 key={role.title}
                 className={`p-6 lg:p-8 bg-white ${
                   index !== 0 ? "md:border-l border-[#e6e6e6]" : ""
-                } ${index !== roles.length - 1 ? "border-b md:border-b-0 border-[#e6e6e6]" : ""}`}
+                } ${
+                  index !== roles.length - 1
+                    ? "border-b md:border-b-0 border-[#e6e6e6]"
+                    : ""
+                }`}
               >
                 <h4 className="text-[24px] leading-[1.25] font-bold">
                   {role.title}
@@ -471,19 +554,39 @@ function Landing() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
-              <Link
-                to="/register"
-                className="inline-flex h-12 items-center justify-center px-8 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition"
-              >
-                DAFTAR SEKARANG
-              </Link>
+              {isLoggedIn ? (
+                <>
+                  <Link
+                    to="/dashboard"
+                    className="inline-flex h-12 items-center justify-center px-8 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition"
+                  >
+                    MASUK DASHBOARD
+                  </Link>
 
-              <Link
-                to="/login"
-                className="inline-flex h-12 items-center justify-center px-8 border border-white text-white text-[14px] font-bold tracking-[0.5px] hover:bg-white hover:text-[#1a2129] transition"
-              >
-                MASUK SISTEM
-              </Link>
+                  <Link
+                    to="/buku-referensi"
+                    className="inline-flex h-12 items-center justify-center px-8 border border-white text-white text-[14px] font-bold tracking-[0.5px] hover:bg-white hover:text-[#1a2129] transition"
+                  >
+                    LIHAT BUKU
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/register"
+                    className="inline-flex h-12 items-center justify-center px-8 bg-[#1c69d4] text-white text-[14px] font-bold tracking-[0.5px] hover:bg-[#0653b6] transition"
+                  >
+                    DAFTAR SEKARANG
+                  </Link>
+
+                  <Link
+                    to="/login"
+                    className="inline-flex h-12 items-center justify-center px-8 border border-white text-white text-[14px] font-bold tracking-[0.5px] hover:bg-white hover:text-[#1a2129] transition"
+                  >
+                    MASUK SISTEM
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -517,12 +620,35 @@ function Landing() {
           <div>
             <h4 className="text-[16px] font-bold mb-4">Sistem</h4>
             <div className="space-y-3 text-[14px] font-light">
-              <Link to="/login" className="block hover:text-[#1c69d4]">
-                Login
-              </Link>
-              <Link to="/register" className="block hover:text-[#1c69d4]">
-                Register
-              </Link>
+              {isLoggedIn ? (
+                <>
+                  <Link
+                    to="/dashboard"
+                    className="block hover:text-[#1c69d4]"
+                  >
+                    Dashboard
+                  </Link>
+
+                  <button
+                    type="button"
+                    onClick={handleLogout}
+                    className="block hover:text-[#1c69d4] text-left"
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link to="/login" className="block hover:text-[#1c69d4]">
+                    Login
+                  </Link>
+
+                  <Link to="/register" className="block hover:text-[#1c69d4]">
+                    Register
+                  </Link>
+                </>
+              )}
+
               <Link
                 to="/buku-referensi"
                 className="block hover:text-[#1c69d4]"
