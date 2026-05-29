@@ -300,11 +300,6 @@ This prevents 404 errors when refreshing pages such as `/dashboard`, `/buku-refe
 | Add Book       | Add reference book page                   |
 | Edit Book      | Edit reference book page                  |
 
-## Screenshots
-
-### Main Demo
-
-![Demo Screenshot](./public/image/image.png)
 
 ## Future Improvements
 
